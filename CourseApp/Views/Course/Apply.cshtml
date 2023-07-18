@@ -1,0 +1,55 @@
+﻿@model Student
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CourseApp</title>
+    <link rel="stylesheet" href="/modules/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+
+</head>
+<body>
+
+    <div class="container m-4">
+        <div class="card mx-auto" style="width:500px">
+            <div class="card-header">
+                Başvuru Formu
+            </div>
+            <div class="card-body">
+                <form asp-action="apply" method="post">
+                    <div asp-validation-summary="All">
+
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Ad</label>
+                        <input asp-for="Name" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="LastName" class="form-label">Soyad</label>
+                        <input asp-for="LastName" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">E-posta</label>
+                        <input asp-for="Email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm">Kursa Katılacak mısınız?</label>
+                        <select name="confirm">
+                            <option value="">Seçiniz</option>
+                            <option value="true">Evet, katılıyorum.</option>
+                            <option value="false">Hayır, katılıyorum.</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Kaydol</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>
